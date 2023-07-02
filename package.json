@@ -1,0 +1,46 @@
+{
+  "name": "kidbucks",
+  "version": "0.0.1",
+  "description": "Keep track of virtual tokens for kids reward systems",
+  "main": "start.js",
+  "type": "module",
+  "scripts": {
+    "test": "npm run lint",
+    "createuser": "node createUser.js",
+    "lint": "standard --env jest --env browser",
+    "lint:fix": "standard --env jest --env browser --fix",
+    "build": "tailwindcss -i app.css -o src/public/lib/ext/app.css \\\"$@\\\"",
+    "build:watch": "npm run build -- --watch &",
+    "start": "npm run build:watch & npm run start:prod",
+    "start:prod": "docker-compose up -d && node start.js",
+    "docker:build": "docker build --progress=plain . -t kidbucks:local",
+    "docker:run": "npm run docker:build && docker run --rm -e KIDBUCKS_APP_KEYDB_PORT=host.docker.internal:16379 -p 10421:10420 kidbucks:local",
+    "dev": "ts-node --esm dev.ts"
+  },
+  "keywords": [],
+  "author": "your mom",
+  "license": "MIT",
+  "dependencies": {
+    "@srfnstack/fntags": "0.4.1",
+    "@srfnstack/spliffy": "1.1.0",
+    "csurf": "^1.11.0",
+    "dotenv": "16.0.1",
+    "helmet": "5.1.0"
+  },
+  "devDependencies": {
+    "connect-livereload": "^0.6.1",
+    "cross-env": "^7.0.3",
+    "daisyui": "^2.50.1",
+    "enquirer": "^2.3.6",
+    "livereload": "^0.9.3",
+    "nodemon": "^2.0.16",
+    "open-cli": "^7.1.0",
+    "standard": "^17.0.0",
+    "tailwindcss": "^3.2.7"
+  },
+  "standard": {
+    "ignore": [
+      "**/lib/ext/**"
+    ]
+  }
+}

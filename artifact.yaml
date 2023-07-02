@@ -1,0 +1,20 @@
+environments:
+  - name: prod
+    versions:
+      app: latest
+      chart: 0.1.53
+form: app
+mothership_app:
+  default:
+    keydb:
+      enabled: true
+    environment:
+      - name: CHATGPT-API-KEY
+        valueFrom:
+          secretKeyRef:
+            name: chatgpt-api-key
+            key: key
+  overrides:
+    prod:
+      hosts:
+        - kidbucks.app

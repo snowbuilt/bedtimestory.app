@@ -7,7 +7,7 @@
 import Debug from 'debug'
 const debug = Debug('server:server')
 import http from 'http'
-import app from '../app.js'
+import app from '../../src/app.js'
 
 /**
  * Get port from environment and store in Express.
