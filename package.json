@@ -1,5 +1,5 @@
 {
-  "name": "kidbucks",
+  "name": "bedtimestory",
   "version": "0.0.1",
   "description": "Keep track of virtual tokens for kids reward systems",
   "main": "start.js",
@@ -13,9 +13,9 @@
     "build:watch": "npm run build -- --watch &",
     "start": "npm run build:watch & npm run start:prod",
     "start:prod": "docker-compose up -d && node start.js",
-    "docker:build": "docker build --progress=plain . -t kidbucks:local",
-    "docker:run": "npm run docker:build && docker run --rm -e KIDBUCKS_APP_KEYDB_PORT=host.docker.internal:16379 -p 10421:10420 kidbucks:local",
-    "dev": "ts-node --esm dev.ts"
+    "docker:build": "docker build --progress=plain . -t bedtimestory:local",
+    "docker:run": "npm run docker:build && docker run --rm -e KIDBUCKS_APP_KEYDB_PORT=host.docker.internal:16379 -p 10421:10420 bedtimestory:local",
+    "dev": "node dev.js"
   },
   "keywords": [],
   "author": "your mom",
@@ -25,7 +25,8 @@
     "@srfnstack/spliffy": "1.1.0",
     "csurf": "^1.11.0",
     "dotenv": "16.0.1",
-    "helmet": "5.1.0"
+    "helmet": "5.1.0",
+    "openai": "^3.3.0"
   },
   "devDependencies": {
     "connect-livereload": "^0.6.1",

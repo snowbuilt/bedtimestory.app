@@ -1,0 +1,9 @@
+/* this file is required for tailwind, but should not be used directly. Use the generated file at /lib/ext/app.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    padding: 0;
+}

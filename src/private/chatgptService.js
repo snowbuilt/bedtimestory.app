@@ -6,7 +6,7 @@ import { Configuration, OpenAIApi } from 'openai'
 
 const openai = new OpenAIApi(
     new Configuration({
-        apiKey: process.env.API_KEY || throw 'API_KEY must be set',
+        apiKey: process.env.API_KEY || '',
     })
 )
 console.log(`set up OpenAIApi`)

@@ -17,4 +17,4 @@ mothership_app:
   overrides:
     prod:
       hosts:
-        - kidbucks.app
+        - bedtimestory.app
