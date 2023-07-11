@@ -25,7 +25,7 @@ setRootPath('/')
     modRouter(
       {
         routePath: '/ui/pages',
-        frame: frame(),
+        frame,
         onerror: e => {
           console.error(e)
           return frame(noPage())

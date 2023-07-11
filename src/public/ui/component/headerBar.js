@@ -8,7 +8,7 @@ const pages = [
 const pageLink = (page) => a({href: page.link}, h4(page.text))
 
 export default function headerBar(){
-  return div({class: 'navbar bg-base-100'},
+  return div({class: 'navbar bg-base-80'},
     a({href:'/'}, img({src:'/android-chrome-192x192.png'})),
     pages.map(pageLink)
   )
